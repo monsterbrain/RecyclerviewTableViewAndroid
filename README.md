@@ -1,4 +1,4 @@
-# RecyclerviewTableViewAndroid
+# TableView using Recyclerview (Android)
 A sample Android Studio Project showing using a Recyclerview as a Table View.
 
 ## Here's the preview

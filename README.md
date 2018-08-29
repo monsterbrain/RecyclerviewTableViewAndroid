@@ -1,7 +1,8 @@
 # RecyclerviewTableViewAndroid
 A sample Android Studio Project showing using a Recyclerview as a Table View.
 
-## Here's the preview (TODO)
+## Here's the preview
+![TableView Demo Gif](https://github.com/monsterbrain/RecyclerviewTableViewAndroid/blob/master/tableview_demo.gif)
 
 ## Code Snippets (TODO)
 

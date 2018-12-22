@@ -33,7 +33,7 @@ public class TableViewAdapter extends RecyclerView.Adapter {
         int rowPos = rowViewHolder.getAdapterPosition();
 
         if (rowPos == 0) {
-            // header
+            // Header Cells. Main Headings appear here
             rowViewHolder.txtRank.setBackgroundResource(R.drawable.table_header_cell_bg);
             rowViewHolder.txtMovieName.setBackgroundResource(R.drawable.table_header_cell_bg);
             rowViewHolder.txtYear.setBackgroundResource(R.drawable.table_header_cell_bg);
@@ -46,6 +46,7 @@ public class TableViewAdapter extends RecyclerView.Adapter {
         } else {
             MovieModal modal = movieList.get(rowPos-1);
 
+            // Content Cells. Content appear here
             rowViewHolder.txtRank.setBackgroundResource(R.drawable.table_content_cell_bg);
             rowViewHolder.txtMovieName.setBackgroundResource(R.drawable.table_content_cell_bg);
             rowViewHolder.txtYear.setBackgroundResource(R.drawable.table_content_cell_bg);
@@ -60,7 +61,7 @@ public class TableViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return movieList.size()+1;
+        return movieList.size()+1; // one more to add header row
     }
 
     public class RowViewHolder extends RecyclerView.ViewHolder {

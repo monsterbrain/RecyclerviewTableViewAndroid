@@ -33,7 +33,7 @@
 
     <TextView
         android:id="@+id/txtCost"
-        android:layout_width="128dp"
+        android:layout_width="156dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@drawable/table_content_cell_bg"

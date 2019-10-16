@@ -1,6 +1,9 @@
 # TableView using Recyclerview (Android)
 A sample Android Studio Project showing using a Recyclerview as a Table View.
 
+## Upgraded to Kotlin (38% code reduction :))
+### (older java version can be found [here](https://github.com/monsterbrain/RecyclerviewTableViewAndroid/tree/v1.0-java)
+
 ## Here's the preview
 ![TableView Demo Gif](https://github.com/monsterbrain/RecyclerviewTableViewAndroid/blob/master/tableview_demo.gif)
 
@@ -23,6 +26,26 @@ Here's the Recyclerview xml in the main layout.
     </HorizontalScrollView>
     
 Here's the Recyclerview Adapter onBinding (all other stuffs are the same)
+
+## Kotlin Version
+    val rowPos = holder.adapterPosition
+
+    if (rowPos == 0) {
+        // Header Cells. Main Headings appear here
+        holder.itemView.apply {
+            setHeaderBg(txtMovieName)
+            txtMovieName.text = "Name"
+        }
+    } else {
+        val modal = movieList[rowPos - 1]
+
+        holder.itemView.apply {
+            setContentBg(txtMovieName)
+            txtMovieName.text = modal.movieName
+        }
+    }
+
+## Java Version
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {

@@ -1,4 +1,4 @@
-package com.safecare.recyclerviewtableview
+package com.monsterbrain.recyclerviewtableview
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater

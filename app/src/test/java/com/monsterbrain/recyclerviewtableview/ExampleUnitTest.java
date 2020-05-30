@@ -1,4 +1,4 @@
-package com.safecare.recyclerviewtableview;
+package com.monsterbrain.recyclerviewtableview;
 
 import org.junit.Test;
 

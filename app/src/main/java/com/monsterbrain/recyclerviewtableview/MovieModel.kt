@@ -1,4 +1,4 @@
-package com.safecare.recyclerviewtableview
+package com.monsterbrain.recyclerviewtableview
 
 class MovieModel(
         var rank: Int,

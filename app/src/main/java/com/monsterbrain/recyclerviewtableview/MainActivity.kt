@@ -1,4 +1,4 @@
-package com.safecare.recyclerviewtableview
+package com.monsterbrain.recyclerviewtableview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

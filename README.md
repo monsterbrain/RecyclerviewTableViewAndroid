@@ -16,7 +16,7 @@ Here's the Recyclerview xml in the main layout.
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMovieList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

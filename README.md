@@ -1,6 +1,11 @@
 # TableView using Recyclerview (Android)
 A sample Android Studio Project showing using a Recyclerview as a Table View.
 
+## How the Height of Row works
+The Height of row is determined by the cell, which has maximum multiline content. In this sample
+that cell is given **wrap_content** and other cells are given **match_parent**. I've got to find
+a way to dynamically check this later.
+
 ## Upgraded to Kotlin (38% code reduction :))
 ### (older java version can be found [here](https://github.com/monsterbrain/RecyclerviewTableViewAndroid/tree/v1.0-java)
 

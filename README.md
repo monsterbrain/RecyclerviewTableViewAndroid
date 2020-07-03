@@ -50,7 +50,7 @@ Here's the Recyclerview Adapter onBinding (all other stuffs are the same)
         }
     }
 
-## Java Version
+<details><summary>Click to see the example in Java.</summary>
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
@@ -89,6 +89,7 @@ Here's the Recyclerview Adapter onBinding (all other stuffs are the same)
     public int getItemCount() {
         return movieList.size()+1; // one more to add header row
     }
+</details>
 
 # Motivation
 While searching for TableView plugins, I found out that many of the Tableviews are really hard to setup and customize.

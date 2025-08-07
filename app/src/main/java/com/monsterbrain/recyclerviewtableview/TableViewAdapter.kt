@@ -6,7 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
+interface OnRowClickListener {
+    fun onRowClick(movie: MovieModel, position: Int)
+}
+
 class TableViewAdapter(private val movieList: List<MovieModel>) : RecyclerView.Adapter<TableViewAdapter.RowViewHolder>() {
+
+    private var onRowClickListener: OnRowClickListener? = null
+
+    fun setOnRowClickListener(listener: OnRowClickListener) {
+        this.onRowClickListener = listener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.table_list_item, parent, false)
@@ -36,6 +46,10 @@ class TableViewAdapter(private val movieList: List<MovieModel>) : RecyclerView.A
                 txtMovieName.text = "Name"
                 txtYear.text = "Year"
                 txtCost.text = "Budget (in Millions)"
+                
+                // Remove click listener for header row
+                itemView.setOnClickListener(null)
+                itemView.isClickable = false
             }
         } else {
             val modal = movieList[rowPos - 1]
@@ -50,6 +64,12 @@ class TableViewAdapter(private val movieList: List<MovieModel>) : RecyclerView.A
                 txtMovieName.text = modal.movieName
                 txtYear.text = modal.year.toString()
                 txtCost.text = modal.budgetInMillions.toString()
+                
+                // Add click listener for content rows
+                itemView.setOnClickListener {
+                    onRowClickListener?.onRowClick(modal, rowPos - 1)
+                }
+                itemView.isClickable = true
             }
         }
     }

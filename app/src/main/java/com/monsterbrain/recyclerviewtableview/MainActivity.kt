@@ -2,10 +2,11 @@ package com.monsterbrain.recyclerviewtableview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnRowClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,7 +14,23 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerViewMovieList = findViewById<RecyclerView>(R.id.recyclerViewMovieList)
         recyclerViewMovieList.layoutManager = LinearLayoutManager(this)
-        recyclerViewMovieList.adapter = TableViewAdapter(movieList)
+        
+        val adapter = TableViewAdapter(movieList)
+        adapter.setOnRowClickListener(this)
+        recyclerViewMovieList.adapter = adapter
+    }
+
+    override fun onRowClick(movie: MovieModel, position: Int) {
+        // Show a toast message indicating which row was clicked
+        // In a real app, this would typically start an edit activity
+        val message = "Clicked on: ${movie.movieName} (Rank ${movie.rank})\n" +
+                "Year: ${movie.year}, Budget: ${movie.budgetInMillions}M\n" +
+                "Position: $position"
+        
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        
+        // TODO: In a real implementation, you would start an edit activity here
+        // Example: startEditActivity(movie, position)
     }
 
     // src Wikipedia
